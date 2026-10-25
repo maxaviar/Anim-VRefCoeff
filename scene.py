@@ -22,6 +22,7 @@ def build_wavefronts(n_trips, T, v_plus, gamma_l, gamma_g):
     return fronts
 
 def v(z,t):
+    """Re{V(d)e^j*w*t}"""
     pass
 
 ## USER INPUTS
@@ -49,13 +50,8 @@ t_r = 0           # Rise time for source step
 T = l / u_p  # One way travel time down line
 Vplus = (V_g * Z_o) / (Z_g + Z_o)  # Amplitude of first wave
 gamma_l = (Z_l - Z_o) / (Z_l + Z_o) # Fraction of forward wave reflected
-gamma_g = (Z_g - Z_o) / (Z_g + Z_o)  #Fraction of backward wave reflected
+gamma_g = (Z_g - Z_o) / (Z_g + Z_o)  # Fraction of backward wave reflected
 V_inf = (V_g * Z_l) / (Z_g + Z_l)  # Final settled voltage
-
-fwd_waves_time = [0, 2*T, 4*T]
-fwd_waves_amp = 0
-bck_waves_time = [T, 3*T, 5*T]
-
 
 class VRefCoeff(Scene):
     def construct(self):
